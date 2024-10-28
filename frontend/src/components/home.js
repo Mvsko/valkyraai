@@ -9,6 +9,7 @@ function Home() {
     const featuresSection = document.getElementById('features');
     const aboutSection = document.getElementById('about');
     const plansSection = document.getElementById('plans');
+    const contactSection = document.getElementById('contact');
 
     const options = {
       root: null,
@@ -29,11 +30,13 @@ function Home() {
     if (featuresSection) observer.observe(featuresSection);
     if (aboutSection) observer.observe(aboutSection);
     if (plansSection) observer.observe(plansSection);
+    if (contactSection) observer.observe(contactSection);
 
     return () => {
       if (featuresSection) observer.unobserve(featuresSection);
       if (aboutSection) observer.unobserve(aboutSection);
       if (plansSection) observer.unobserve(plansSection);
+      if (contactSection) observer.unobserve(contactSection);
     };
   }, []);
 
@@ -41,15 +44,15 @@ function Home() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <a href= "localhost" className="navbar-brand">Valkyra</a>
+          <span className="navbar-brand">Valkyra</span>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><a className="nav-link" href="#features">Fonctionnalités</a></li>
-              <li className="nav-item"><a className="nav-link" href="#plans">Nos Plans</a></li>
               <li className="nav-item"><a className="nav-link" href="#about">À propos</a></li>
+              <li className="nav-item"><a className="nav-link" href="#plans">Nos Plans</a></li>
               <li className="nav-item"><a className="nav-link contact-link" href="#contact">Contact</a></li>
               <li className="nav-item"><a className="nav-link btn btn-warning text-dark" href="localhost">Commencer</a></li>
             </ul>
@@ -176,7 +179,7 @@ function Home() {
       </section>
 
 
-      <section id="contact" className="contact-section py-5">
+      <section id="contact" className="contact-section py-5 hidden">
         <div className="container text-center">
           <h2 className="text-warning"><u>Contactez-nous</u></h2>
           <p>Une question ? Nous sommes là pour vous aider.</p>
