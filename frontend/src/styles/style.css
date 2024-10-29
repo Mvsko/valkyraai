@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #121212;
   color: #e0e0e0;
   height: 100vh;
@@ -76,7 +76,7 @@ button {
 }
 
 .hero-section {
-  height: 91vh;
+  height: 93vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,4 +269,13 @@ button {
 .item button.border:hover {
   background: #fff;
   color: #FFC300;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-size: 2rem;
 }

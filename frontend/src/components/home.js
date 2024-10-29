@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../styles/style.css';
 
 function Home() {
   const handleDiscoverClick = () => {
