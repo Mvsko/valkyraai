@@ -1,0 +1,59 @@
+/* markdown.css */
+
+/* ---- Message Box ---- */
+.messages-section{
+    user-select: text;
+}
+
+.messages-section ::selection {
+    background-color: #FFD700;
+    color: #121212;
+}
+
+.messages-section .message-box {
+    padding: 10px;
+    border-radius: 12px;
+    margin: 8px 0;
+}
+
+/* ---- Gras ---- */
+.messages-section strong {
+    font-weight: bold;
+}
+
+/* ---- Italique ---- */
+.messages-section em {
+    font-style: italic;
+}
+
+/* ---- Blocs de code ---- */
+.messages-section pre {
+    background-color: #282c34;
+    border-radius: 8px;
+    padding: 15px;
+    overflow: auto;
+    color: #ffffff;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    border: 1px solid #444;
+}
+
+/* ---- Code inline ---- */
+.messages-section code {
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    color: #e8e8e8;
+}
+
+/* ---- Styles pour les liens ---- */
+.messages-section a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.messages-section a:hover {
+    text-decoration: underline;
+}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'; 
 import { Link } from 'react-router-dom';
 import '../styles/valkyraai.css';
+import '../styles/markdown.css';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 
 function ValkyraAI() {
     const [loading, setLoading] = useState(true);
@@ -156,7 +158,7 @@ function ValkyraAI() {
                     <div className="messages-section">
                         {messages.map((message) => (
                             <div key={message.id} className={`message-box ${message.from}`}>
-                                <p>{message.text}</p>
+                                <ReactMarkdown>{message.text}</ReactMarkdown>
                             </div>
                         ))}
                     </div>
