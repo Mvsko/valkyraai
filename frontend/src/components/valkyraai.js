@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react'; 
 import { Link } from 'react-router-dom';
 import '../styles/valkyraai.css';
 
 function ValkyraAI() {
   const [loading, setLoading] = useState(true);
+  const [inputValue, setInputValue] = useState('');
+  const textAreaRef = useRef(null);
   const [messages, setMessages] = useState([
     { id: 1, text: "Bienvenue dans le chatbot Valkyra ! Comment puis-je vous aider aujourd'hui ?", from: 'bot' },
   ]);
@@ -21,9 +23,11 @@ function ValkyraAI() {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const handleSendMessage = (message) => {
-    if (message.trim()) {
-      setMessages([...messages, { id: messages.length + 1, text: message, from: 'user' }]);
+  const handleSendMessage = () => {
+    if (inputValue.trim()) {
+      setMessages([...messages, { id: messages.length + 1, text: inputValue, from: 'user' }]);
+      setInputValue('');
+      textAreaRef.current.style.height = 'auto';
     }
   };
 
@@ -67,9 +71,14 @@ function ValkyraAI() {
               placeholder="Tapez votre message..."
               rows="1"
               maxLength={8192}
-              onInput={handleInput}
+              value={inputValue}
+              ref={textAreaRef}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                handleInput(e);
+              }}
             />
-            <button className="send-button" onClick={() => handleSendMessage(document.querySelector('.input-message').value)}>
+            <button className="send-button" onClick={handleSendMessage}>
               <i className='bx bx-paper-plane'></i>
             </button>
           </div>
